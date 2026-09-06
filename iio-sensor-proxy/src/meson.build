@@ -84,6 +84,14 @@ test_orientation = executable('test-orientation',
 
 test('test-orientation', test_orientation)
 
+test_mxc6655_accel_claim = executable('test-mxc6655-accel-claim',
+  [ 'test-mxc6655-accel-claim.c', 'accel-scale.c' ],
+  dependencies: deps,
+  install: false
+)
+
+test('test-mxc6655-accel-claim', test_mxc6655_accel_claim)
+
 if get_option('gtk-tests')
   executable('test-orientation-gtk',
     [ 'test-orientation-gtk.c', 'orientation.c', 'accel-scale.c' ],
